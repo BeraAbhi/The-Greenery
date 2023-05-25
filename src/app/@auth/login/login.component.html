@@ -1,0 +1,89 @@
+<!-- <div class="main">
+    <div class="container">
+        <form action="" [formGroup]="loginData">
+            <div class="row">
+                <h1>Login</h1>
+                <div class="loginForm">
+                    <div class="labeles">
+                        <div class="email"><label>Email</label></div>
+                        <div class="password"><label>Password</label></div>
+                    </div>
+                    <div class="inputfields">
+                        <div class="email">
+                            <input type="text" formControlName="email">
+                            <p *ngIf="loginData.get('email')?.hasError('email')" class="alert-danger">Please enter a
+                                valid email</p>
+                            <p *ngIf="loginData.hasError('both is invalid')"
+                                class="alert-danger">
+                                Email is Wrong</p>
+                        </div>
+                        <div class="password">
+                            <input type="password" formControlName="password">
+                            <p *ngIf="loginData.hasError('both is invalid') "
+                                class="alert-danger">Password is Wrong</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-primary" [disabled]="loginData.invalid" (click)="onSubmitData()">login</button>
+    </div>
+
+    <div class="message-unsuccess">
+        <h3 *ngIf="loginData.hasError('both is invalid')">Your Data is not matching click here to <a
+                routerLink="/registration">Register</a></h3>
+    </div>
+    <div class="message-success">
+        <h3 *ngIf="matched">Your Data matching</h3>
+    </div>
+</div> -->
+
+<div class="main">
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure>
+                        <img src="../../../assets/images/signin-image.jpg" alt="sing up image" routerLink="/registration" />
+                    </figure>
+                    <a  class="signup-image-link" routerLink="/registration">Create an account</a>
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Sign in</h2>
+                    <form method="POST" class="register-form" id="login-form" [formGroup]="loginData">
+                        <div class="form-group">
+                            <label for="your_name"><h5><i class="fa fa-duotone fa-envelope"></i></h5></label>
+                            <input type="text" name="your_name" id="your_name" placeholder="Your Email"
+                                formControlName="email" />
+                        </div>
+                        <p *ngIf="loginData.get('email')?.hasError('email')" class="alert-danger alert">
+                            Please enter a valid email
+                        </p>
+                        <p *ngIf="loginData.hasError('both is invalid')" class="alert-danger alert">
+                            Email is Wrong
+                        </p>
+                        <div class="form-group">
+                            <label for="your_pass"><h3><i class="fa fa-light fa-lock"></i></h3></label>
+                            <input type="password" name="your_pass" id="your_pass" placeholder="Password"
+                                formControlName="password" />
+                        </div>
+                        <p *ngIf="loginData.hasError('both is invalid')" class="alert-danger alert">
+                            Password is Wrong
+                        </p>
+                        <div class="form-group form-button">
+                            <button type="submit" name="signin" id="signin" class="form-submit" [disabled]="loginData.invalid" (click)="onSubmitData()">Log in <img src="https://cdn-icons-png.flaticon.com/512/1828/1828391.png" alt="" class="login-icon"></button>
+                        </div>
+                    </form>
+                    <div class="message-unsuccess mt-5">
+                        <h3 *ngIf="loginData.hasError('both is invalid')">Your Data is not matching click here to <a
+                                routerLink="/registration">Register</a></h3>
+                    </div>
+                    <div class="message-success mt-5">
+                        <h3 *ngIf="matched">Your Data matching</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

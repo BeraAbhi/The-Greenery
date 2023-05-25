@@ -1,0 +1,347 @@
+{
+  "registrationdata": [
+    {
+      "firstName": "user abhi",
+      "lastName": "bera",
+      "email": "user@test.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "userType": "User",
+      "id": 1
+    },
+    {
+      "firstName": "admin abhi",
+      "lastName": "bera",
+      "email": "admin@test.com",
+      "password": "456",
+      "confirmPassword": "456",
+      "userType": "Admin",
+      "id": 2
+    },
+    {
+      "firstName": "bera",
+      "email": "bera@admin",
+      "password": "123",
+      "confirmPassword": "123",
+      "userType": "User",
+      "id": 3
+    },
+    {
+      "firstName": "abhi",
+      "email": "abhi@admin",
+      "password": "456",
+      "confirmPassword": "456",
+      "userType": "Admin",
+      "id": 4
+    },
+    {
+      "firstName": "abhi",
+      "email": "abhi@admin2",
+      "password": "456",
+      "confirmPassword": "456",
+      "userType": "Admin",
+      "id": 5
+    },
+    {
+      "firstName": "abhi",
+      "email": "abhi@admin2",
+      "password": "456",
+      "confirmPassword": "456",
+      "userType": "Admin",
+      "id": 6
+    },
+    {
+      "firstName": "abhi",
+      "email": "abhi@admin2",
+      "password": "456",
+      "confirmPassword": "456",
+      "userType": "Admin",
+      "id": 7
+    },
+    {
+      "firstName": "abhi",
+      "email": "abhi@admin2",
+      "password": "456",
+      "confirmPassword": "456",
+      "userType": "Admin",
+      "id": 8
+    },
+    {
+      "firstName": "Abhi bera",
+      "email": "abhi@admin3",
+      "password": "456",
+      "confirmPassword": "456",
+      "userType": "Admin",
+      "id": 9
+    }
+  ],
+  "products": [
+    {
+      "productName": "Lemon Grass ",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-g-lemon-grass-plant_600x600.jpg?v=1634227097",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-lemon-grass-plant-2_540x720.jpg?v=1634227093",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-lemon-grass-plant-3_540x720.jpg?v=1634227091",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-lemon-grass-plant-4_540x720.jpg?v=1634227090"
+      ],
+      "productType": "plant",
+      "productPrice": "300",
+      "productDescription": "Lemongrass, also known as Cymbopogon, is a perennial grass native to tropical regions, prized for its aromatic and culinary uses. With its long, slender stalks and vibrant green color, lemongrass adds a refreshing citrusy flavor and fragrance to a variety of dishes and beverages. It is commonly used in Asian cuisine, particularly Thai and Vietnamese dishes, imparting a unique and tangy essence. In addition to its culinary applications, lemongrass is also used for its medicinal properties, as it is believed to have anti-inflammatory, antimicrobial, and antioxidant effects. Its essential oil is used in aromatherapy for its calming and soothing qualities",
+      "id": 1
+    },
+    {
+      "productName": "Rosemary",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-g-plants-rosemary-plant-in-5-inch-13-cm-grower-round-plastic-black-pot-602650_600x600.jpg?v=1679751054",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-rosemary-plant-in-5-inch-13-cm-grower-round-plastic-black-pot-2-357086_540x720.jpg?v=1679751054",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-rosemary-plant-in-5-inch-13-cm-grower-round-plastic-black-pot-4-889621_540x720.jpg?v=1679751054"
+      ],
+      "productType": "plant",
+      "productPrice": "400",
+      "productDescription": "Rosemary (Rosmarinus officinalis) is an aromatic herb known for its delightful fragrance and culinary versatility. This perennial evergreen shrub features needle-like, dark green leaves and produces small, blue or purple flowers. It is native to the Mediterranean region but is cultivated and enjoyed worldwide. ",
+      "productBotanicalName": "Salvia rosmarinus",
+      "id": 2
+    },
+    {
+      "productName": "Diamond Ceramic Pot",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/detail_e69e2f5a-3ed6-4cfb-a247-b85498b6eeaa.jpg?v=1679653402",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/DiamondPot4.jpg?v=1679653402",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/eyelevel_a1dc0c35-2199-4620-8505-ae8e88026e7e.jpg?v=1679653402",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/top.jpg?v=1679653402"
+      ],
+      "productType": "Pots",
+      "productPrice": "499",
+      "productDescription": "At The Greenery, we understand that the pot you choose for your plants can make all the difference in the aesthetic appeal of your space. That's why we offer a wide range of pots that are not only beautiful, but also practical and durable. Our pots come in different shapes, sizes, and colors to match your decor theme and enhance the beauty of your plants. Choosing a pot from The Greenery means you're investing in both style and quality. Introducing our Diamond Ceramic Planter in a sleek black colour, a stunning addition to any plant lover's collection. Crafted from high-quality glazed ceramic, this planter boasts a premium finish that exudes elegance and style. ",
+      "productBotanicalName": " ",
+      "id": 10
+    },
+    {
+      "productName": "Mogra",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-g-jasminum-sambac-mogra-arabian-jasmine_600x600.jpg?v=1634222612"
+      ],
+      "productType": "plant",
+      "productPrice": "299",
+      "productDescription": "Jasminum sambac is a small shrub native to Bhutan and India and widely cultivated for its very fragrant and showy flowers. It is an environmental and garden weed and has a climbing growth habit that can smother other plants. Currently, this species is listed as invasive in Cuba and Hawaii and Florida in the USA.",
+      "productBotanicalName": "Jasminum sambac",
+      "id": 4
+    },
+    {
+      "productName": "Rectangle Pot",
+      "productImage": [
+        "https://plantlane.com/cdn/shop/products/RECRAIL_1.jpg?v=1663221426"
+      ],
+      "productType": "Pots",
+      "productPrice": "299",
+      "productDescription": "At The Greenery, we understand that the pot you choose for your plants can make all the difference in the aesthetic appeal of your space. That's why we offer a wide range of pots that are not only beautiful, but also practical and durable. Our pots come in different shapes, sizes, and colors to match your decor theme and enhance the beauty of your plants. Choosing a pot from The Greenery means you're investing in both style and quality. ",
+      "productBotanicalName": "Green Girgit Rectangle 'Flowers & Garden' Tub Metal Planter",
+      "id": 5
+    },
+    {
+      "productName": "Bamboo Plant in a Bowl",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-3-layer-lucky-bamboo-plant-in-a-bowl-with-pebbles-1-383367_540x720.jpg?v=1679748420",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-3-layer-lucky-bamboo-plant-in-a-bowl-with-pebbles-2-350236_540x720.jpg?v=1679748420",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-3-layer-lucky-bamboo-plant-in-a-bowl-with-pebbles-3-399967_540x720.jpg?v=1679748420",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-3-layer-lucky-bamboo-plant-in-a-bowl-with-pebbles-5-265294_540x720.jpg?v=1679748420"
+      ],
+      "productType": "plant",
+      "productPrice": "459",
+      "productDescription": "Lucky Bamboo is well-known for bringing good fortune prosperity and positive vibesLucky bamboo symbolize happy life making it a perfect gift for any occasion These plants are extremely easy to take care and require very little maintenance You can keep this plant in air-conditioned rooms also",
+      "productBotanicalName": "Bambusa vulgaris",
+      "id": 6
+    },
+    {
+      "productName": "Embossed Water cane",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/2083/6855/products/GG_EWCB_1_720x.jpg?v=1597755710"
+      ],
+      "productType": "tools",
+      "productPrice": "599",
+      "productDescription": "",
+      "productBotanicalName": "Embossed Water cane(blue)",
+      "id": 7
+    },
+    {
+      "productName": "Hedge Shear with Wooden Handle - 10 Inch",
+      "productPrice": "399",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/hedge-shear-with-wooden-handle-10-inch-32010501259396.jpg?v=1675563845",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaL2BPRCqKQTIteFG65Mq6BhGiP8T2qvsW6Y18eBcTIVZN4-E-"
+      ],
+      "productType": "tools",
+      "productDescription": "250 mm hardened steel blades which effortlessly cuts through troublesome and unwanted garden growth. It’s a good-quality lightweight tool for the efficient trimming and pruning of grass and hedges in your garden. It has a wooden handle for a firm and secure grip.",
+      "id": 15
+    },
+    {
+      "productName": "Broken Heart Plant",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/GroPot_bc7fb436-8265-4e99-b24c-b46ebc156c1a.jpg?v=1680331939&width=750",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/DSC_8923_f6911762-fe5b-4e8e-a5cb-58610931b42d.jpg?v=1680331238",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/DSC_9153_66c830e1-b1ce-4be8-a953-1a7c7aeb0adb.jpg?v=1680331238"
+      ],
+      "productType": "plant",
+      "productPrice": "599",
+      "productDescription": "The Broken Heart Plant is a beautiful addition to any garden. With its unique characteristics, it makes for an eye-catching focal point when grown indoors. Easy to care for and maintain, this plant will thrive in a bright space with good air circulation, adding a touch of natural elegance to your living space.",
+      "productBotanicalName": "Monstera adansonii",
+      "id": 9
+    },
+    {
+      "productName": "Neem",
+      "productImage": [
+        "https://media.istockphoto.com/id/1197011008/photo/young-neem-tree-in-clay-pot-on-white-background-azadirachta-indica-tree.jpg?s=170667a&w=0&k=20&c=hA4rKug4rlw3k6t7H05blbc4YDUDoqhDTbjmLB2z5R8="
+      ],
+      "productType": "plant",
+      "productPrice": "300",
+      "productDescription": "Neem trees can reach 15–30 metres (49–98 feet) in height and have attractive rounded crowns and thick furrowed bark. The compound leaves have toothed leaflets and are typically evergreen but do drop during periods of extreme drought. The small fragrant white flowers are bisexual or staminate (male) and are borne in clusters in the axils of the leaves. The fruit is a smooth yellow-green drupe and has a sweet-flavoured pulp.",
+      "productBotanicalName": "Azadirachta indica",
+      "id": 3
+    },
+    {
+      "productName": "Reusable 50 Holes Seedling Tray (Set of 3)",
+      "productPrice": "400",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/reusable-50-holes-seedling-tray-set-of-3-31256328241284.png?v=1675613704",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/reusable-50-holes-seedling-tray-set-of-3-31256328175748.png?v=1675613697",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/reusable-50-holes-seedling-tray-set-of-3-31256328208516.png?v=1675613700"
+      ],
+      "productType": "pots",
+      "productDescription": "Made of premium grade plastic, this reusable seedling tray is the perfect solution for all your plant propagation and seed germination requirements. The pot is the perfect size for optimum root growth and with well-placed drainage holes for proper drainage. The tray can be used as is or can be separated into individual planters for single use. The panter can be washed and reused time and again for several propagation and germination cycles.",
+      "id": 17
+    },
+    {
+      "productName": "Barca Rectangle Planter",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/barca-rectangle-planter-32273757241476.jpg?v=1675511996&width=750",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/barca-rectangle-planter-32273757372548.jpg?v=1675512002",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/barca-rectangle-planter-32273757274244.jpg?v=1675512005"
+      ],
+      "productType": "Pots",
+      "productPrice": "1500",
+      "productDescription": "With its simple design and mimalistic look the Barca rectangler planter can fit into any space with ease. Perfect as outdoor garden planters, patio planters, planters for lobby areas, terrace planters, and also as indoor pots, the barca is a perfect example of jack of all trades. Made of 100% recyclable polymers material, the barca square planter is easy to use. Extremely light wieght for easy shifting, and highly durable for a long life under varying environmanetal conditions. Its traditional but eternal square shape that fits into corners, combined with natural stone finish makes it a winner in all scenarios. Add it to your outdor or indoor spaces for a put together and landscaped garden look with the ease of plastic pots and the sophistication of natual stone planters.",
+      "id": 11
+    },
+    {
+      "productName": "Chiku Plant",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/sapota-plant-32114400493700.jpg?v=1673871839&width=750",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/sapota-plant-32114400460932.jpg?v=1673871668",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/sapota-plant-32114400624772.jpg?v=1673871672",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/sapota-plant-32114400592004.jpg?v=1673871842"
+      ],
+      "productType": "plant",
+      "productPrice": "880",
+      "productBotanicalName": "Sapota Plant",
+      "productDescription": "The Sapota plant, also known as Chikoo or Sapodilla (Manilkara zapota), is a tropical evergreen tree that belongs to the Sapotaceae family. Native to Central America, it is now cultivated in various tropical and subtropical regions around the world.The Sapota tree can grow up to 20 meters in height and has a dense, round canopy of glossy green leaves. The fruit it produces, known as Sapota or Chikoo, is oval or round in shape, with a rough brownish skin that becomes softer when ripe. The flesh of the fruit is sweet and creamy, with a grainy texture similar to a pear. It is often described as having a caramel-like flavor, making it a popular choice for desserts, milkshakes, and ice creams.",
+      "id": 12
+    },
+    {
+      "productName": "Onion Gawran - Desi Vegetable Seeds",
+      "productImage": [
+        "https://m.media-amazon.com/images/I/41dgEwubmFL.jpg",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-seeds-onion-gawran-desi-vegetable-seeds-16969142042764_600x600.jpg?v=1634204390",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-seeds-onion-gawran-desi-vegetable-seeds-16969142337676_600x600.jpg?v=1634204388"
+      ],
+      "productType": "seeds",
+      "productPrice": "150",
+      "productBotanicalName": "",
+      "productDescription": "Onion seeds",
+      "id": 13
+    },
+    {
+      "productName": "Green Girgit 3-In-1 Garden Tool Kit",
+      "productPrice": "299",
+      "productImage": [
+        "https://plantlane.com/cdn/shop/products/GG_TOOLS_1.jpg?v=1684200481",
+        "https://plantlane.com/cdn/shop/products/GG_TOOLS_2.jpg?v=1684200472"
+      ],
+      "productType": "tools",
+      "productDescription": "3-in-1-garden-kit",
+      "id": 14
+    },
+    {
+      "productName": "Plant O Boost",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0617/0257/0159/products/nurserylive-seeds-plant-o-boost-special-flower-booster-10-g-16969206399116_600x600_crop_center.jpg?v=1657563016"
+      ],
+      "productType": "Fertilizer",
+      "productPrice": "599",
+      "productDescription": "Plant O Boost overall growth booster is the best in class product for the growth of the plant. It is easy to use and very effective. Plant O Boost s overall growth booster is a specially formulated product for the healthy growth of the Plants. It is easy to use granular powder form. This product also helps in balancing the pH of the soil and improves the water holding capacity of the soil.",
+      "productBotanicalName": "Overall Growth Booster",
+      "id": 8
+    },
+    {
+      "productName": "Hanging Funnel Planter",
+      "productPrice": "1000",
+      "productImage": [
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/hanging_funnel_planter_1.png?v=1661283094",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/hanging_funnel_planter_2.png?v=1661283094",
+        "https://cdn.shopify.com/s/files/1/0579/7924/0580/products/dimensions-with-disclaimer-funnel--planter-t_1.png?v=1661283094"
+      ],
+      "productType": "Pots",
+      "productDescription": "Your search for the perfect hanging planter ends here. This metallic beauty in a gold finish is sure to add charm to the corners of your home. Give your plants the perfect companion to hang out with.",
+      "id": 15
+    },
+    {
+      "productName": "Garden Plant Branch Scissors",
+      "productPrice": "500",
+      "productImage": [
+        "https://plantlane.com/cdn/shop/products/51Uz3Yh299L._SL1000.jpg?v=1684233007",
+        "https://plantlane.com/cdn/shop/products/61m9jQdj4fL._SL1000.jpg?v=1684233000",
+        "https://plantlane.com/cdn/shop/products/31h8GHW0vdL.jpg?v=1684232871",
+        "https://plantlane.com/cdn/shop/products/31EIBOaCekL.jpg?v=1684232767"
+      ],
+      "productType": "tools",
+      "productDescription": "Material:Carbon Steel and Plastic,Colour May Vary,Size: 16CMX4CMX1CM, Weight:0.100 kg",
+      "id": 16
+    }
+  ],
+  "cart": [
+    {
+      "productName": "Neem",
+      "productImage": "https://nestreeo.com/wp-content/uploads/2020/08/Neem-Azadirachta-Indica-Plant-2.jpg",
+      "productPrice": "300",
+      "productQuantity": 1,
+      "userName": "user abhi",
+      "id": 1
+    },
+    {
+      "productName": "Shami",
+      "productImage": "https://housing.com/news/wp-content/uploads/2022/11/Shami-plant2.jpg",
+      "productPrice": "500",
+      "productQuantity": 1,
+      "userName": "user abhi",
+      "id": 2
+    }
+  ],
+  "products123": [
+    {
+      "productId": 1,
+      "productName": "Aloe vera",
+      "productType": "plant",
+      "productImage": "https://indiagardening.b-cdn.net/wp-content/uploads/2020/11/Aloe-vera.jpg",
+      "productDescription": "Native to the desert regions, this stemless plant with fleshy leaves can dwell in any condition without maintenance. This hardy succulent can also survive drought easily.",
+      "productPrice": 299,
+      "productBotanicalName": "Aloe barbadensis miller"
+    },
+    {
+      "productId": 2,
+      "productName": "Shami",
+      "productType": "plant",
+      "productImage": "https://housing.com/news/wp-content/uploads/2022/11/Shami-plant2.jpg",
+      "productDescription": "The Shami plant  commonly known as jand or khejri, is a deep-rooted, perennial, multipurpose plant that is used to provide fodder for cattle in the drier areas of India and the Arabian Peninsula. Its bark is also ground up to make flour and is used during famines. It also has a plethora of ethnomedicinal benefits and commercial uses as well. ",
+      "productPrice": 100,
+      "productBotanicalName": "Prosopis cineraria"
+    },
+    {
+      "productName": "Neem",
+      "productImage": "https://nestreeo.com/wp-content/uploads/2020/08/Neem-Azadirachta-Indica-Plant-2.jpg",
+      "productType": "plant",
+      "productPrice": "800",
+      "productDescription": "Neem trees can reach 15–30 metres (49–98 feet) in height and have attractive rounded crowns and thick furrowed bark. The compound leaves have toothed leaflets and are typically evergreen but do drop during periods of extreme drought. The small fragrant white flowers are bisexual or staminate (male) and are borne in clusters in the axils of the leaves. The fruit is a smooth yellow-green drupe and has a sweet-flavoured pulp.",
+      "productBotanicalName": "Azadirachta indica",
+      "id": 3
+    }
+  ]
+}

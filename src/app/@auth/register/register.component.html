@@ -1,0 +1,119 @@
+<!-- <div class=" section-one">
+<div class="container">
+    <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+        <div class="main">
+            <div class="row">
+                <h1 Class="h1text">Registration</h1>
+                <div class="displayform">
+                    <div class="labeles">
+                        <label>First Name</label>
+                        <label>Last Name</label>
+                        <label>Email</label>
+                        <label>Password</label>
+                        <label>Confirm Password</label>
+                        <label>User Type</label>
+                    </div>
+                    <div class="inputFieldes">
+                        <div class="firstName">
+                            <input type="text" formControlName="firstName">
+                        </div>
+                        <div class="lastName">
+                            <input type="text" formControlName="lastName">
+                        </div>
+                        <div class="email">
+                            <input type="email" formControlName="email">
+                            <p *ngIf="formData.get('email')?.hasError('email')" class="alert-danger">Please Enter a
+                                valid Email</p>
+                        </div>
+                        <div class="password">
+                            <input type="password" formControlName="password">
+                        </div>
+                        <div class="confirmPassword">
+                            <input type="password" formControlName="confirmPassword">
+                        </div>
+                        <div>
+                            <input type="radio" name="userType" value="User" formControlName="userType">User
+                            <input type="radio" name="userType" value="Admin" formControlName="userType">Admin
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="errors">
+                <p *ngIf="formData.get('email')?.hasError('email')" class="alert-danger">Please Enter a valid Email</p>
+                <p *ngIf="formData.get('confirmPassword')?.hasError('confirmPasswordValidator')" class="alert-danger">
+                    password and confirmpassword must be same!!</p>
+            </div>
+
+            <div class="row mt-2">
+                <button type="submit" class="btn btn-primary" [disabled]="formData.invalid">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div> -->
+
+<div class="main">
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form class="register-form" id="register-form" [formGroup]="formData" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="name">
+                                <h3><i class="fa fa-regular fa-user"></i></h3>
+                            </label>
+                            <input type="text" name="name" id="name" placeholder="Your Name" formControlName="firstName"
+                                class="abcd" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                <h4><i class="fa fa-duotone fa-envelope"></i></h4>
+                            </label>
+                            <input type="email" name="email" id="email" placeholder="Your Email"
+                                formControlName="email" />
+                        </div>
+                        <p *ngIf="formData.get('email')?.hasError('email')" class="alert-danger alert">Please Enter a
+                            valid Email</p>
+                        
+                        <div class="form-group">
+                            <label for="pass">
+                                <h3><i class="fa fa-solid fa-lock"></i></h3>
+                            </label>
+                            <input type="password" name="pass" id="pass" placeholder="Password"
+                                formControlName="password" />
+                        </div>
+                        <div class="form-group">
+                            <label for="re-pass">
+                                <h3><i class="fa fa-light fa-lock"></i></h3>
+                            </label>
+                            <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"
+                                formControlName="confirmPassword" />
+                        </div>
+
+                        <!-- <div class="abc">
+                            <h5><i class="fa fa-regular fa-users"></i></h5>
+                            <h6 class="">User Type</h6>
+                            <input type="radio" name="userType" value="User" formControlName="userType">User
+                            <input type="radio" name="userType" value="Admin" formControlName="userType">Admin
+                        </div> -->
+
+                        <div class="form-group form-button">
+                            <button type="submit" name="signup" id="signup" class="form-submit"
+                                [disabled]="formData.invalid" (click)="onSubmit()">Register<i class="fa fa-thin fa-user-plus ml-2"></i></button>
+                        </div>
+                        <div class="errors">
+                            <p *ngIf="formData.get('confirmPassword')?.hasError('confirmPasswordValidator')"
+                                class="alert-danger alert">
+                                password and confirmpassword must be same!!</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="../../../assets/images/signup-image.jpg" alt="sing up image" routerLink="/login"></figure>
+                    <a class="signup-image-link" routerLink="/login">I am already member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

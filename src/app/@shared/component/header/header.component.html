@@ -1,0 +1,228 @@
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="logo">
+                    <img src="../../../../assets/images/WhatsApp Image 2023-02-28 at 8.56.32 AM (1).jpeg " alt=""
+                        class="img img-responsive" />
+                </div>
+            </div>
+
+            <div class="nav nav-bar-center">
+                <form class="form-inline" >
+                    <input class="search-input" type="text" placeholder="Search Here...." aria-label="Search" #search/>
+                    <img class="img img-responsive" src="https://img.icons8.com/ios-glyphs/256/search.png" alt="" (click)="onsubmit(search)"/>
+                </form>
+            </div>
+            <div class="navbar-right">
+                <ul class="options">
+                    <div>
+                        <li>
+                            <button class="btn login-btn" type="button" routerLink="/login" *ngIf="noLoginFound">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2321/2321232.png"
+                                    class="img img-responsive" />
+                                login
+                            </button>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <button class="add-product btn-primary" *ngIf="localUserType" (click)="onAddProduct()">
+                                Add Product
+                            </button>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <button class="btn logout btn-danger" type="button" (click)="onLogout()"
+                                *ngIf="!noLoginFound">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2321/2321232.png"
+                                    class="img img-responsive" />
+                                logout
+                            </button>
+                        </li>
+                    </div>
+                    <div>
+                        <li> 
+                            <button class="btn signup-btn" type="button" routerLink="/registration"
+                                *ngIf="noLoginFound">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3462/3462172.png"
+                                    class="img img-responsive" />
+                                Sign Up
+                            </button>
+                        </li>
+                    </div>
+                    <div class="cart-icon">
+                        <li>
+                            <img src="https://img.icons8.com/ios-glyphs/256/shopping-cart.png" alt=""
+                                routerLink="/cart" />{{ countNumber }}
+                        </li>
+                    </div>
+           
+                    
+                </ul>
+            </div>
+        </div>
+
+        <!-- <section class="main-1">
+            <div class="product-navbarr">
+                <div class="product-list">
+                    <img src="https://m.media-amazon.com/images/I/61ywosfp4gL._SX569_.jpg" alt="" />Plants
+                </div>
+                <div class="product-list">
+                    <img src="https://m.media-amazon.com/images/I/71MSi7Wo6xL._SX569_.jpg" alt="" />Pots
+                </div>
+                <div class="product-list">
+                    <img src="https://cdn.shopify.com/s/files/1/1431/0846/products/71wwffcunhL._SL1001_2400x.jpg?v=1659516028"
+                        alt="" />Tools
+                </div>
+                <div class="product-list">
+                    <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2018/12/31/0/CI_Greenview-Natural-Start-All-Purpose-Plant-Food.jpg.rend.hgtvcom.1280.914.suffix/1546280129174.jpeg"
+                        alt="" />Fertilizer
+                </div>
+                <div class="product-list">
+                    <img src="https://3.imimg.com/data3/SL/WR/GLADMIN-1604/flower-seeds-500x500.jpg" alt="" />Seeds
+                </div>
+                <div class="product-list">
+                    <img src="https://img.freepik.com/free-photo/purple-osteospermum-daisy-flower_1373-16.jpg"
+                        alt="" />Flowers
+                </div>
+            </div>
+        </section> -->
+    </nav>
+</div>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+<!-- <a class="navbar-brand" >Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div> -->
+
+<!-- <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" >Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled"  tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+  </nav> -->
+
+
+
+
+  <!-- <h1>
+    asdfghjkl;''1234567i
+  </h1>
+
+  <!doctype html>
+<html lang="en">
+  <head>
+     Required meta tags -->
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+     Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="css/style.css"> --> 
+
+    <!-- <title>Website Menu #1</title>
+  </head>
+  <body> -->
+
+<!-- 
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="index.html">Brand<span class="text-primary">.</span> </a></h1>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li class="has-children">
+                  <a href="#about-section" class="nav-link">About Us</a>
+                  <ul class="dropdown">
+                    <li><a href="#team-section" class="nav-link">Team</a></li>
+                    <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
+                    <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                    <li><a href="#gallery-section" class="nav-link">Gallery</a></li>
+                    <li><a href="#services-section" class="nav-link">Services</a></li>
+                    <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
+                    <li class="has-children">
+                      <a >More Links</a>
+                      <ul class="dropdown">
+                        <li><a >Menu One</a></li>
+                        <li><a >Menu Two</a></li>
+                        <li><a >Menu Three</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                
+                
+                <li><a href="#blog-section" class="nav-link">Blog</a></li>
+                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-facebook"></span></a></li>
+                <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-twitter"></span></a></li>
+                <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-linkedin"></span></a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a  class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"> sdfrgtyuiop</span></a></div>
+
+        </div>
+      </div>
+      
+    </header>
+
+    <div class="hero"></div> -->
+
+
+  
+  
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script> -->
+  <!-- </body>
+</html>  -->

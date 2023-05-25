@@ -1,0 +1,48 @@
+<div class="main">
+    <div class="header" *ngIf="indexOfEditProduct !== undefined">Edit Product</div>
+    <div class="header" *ngIf="indexOfEditProduct === undefined">Add New Product</div>
+    <div class="section">
+        <div class="left">
+            <div class="preview">
+                <img [src]="imageValue.value" alt="Img-preview" class="img img-responsive">
+            </div>
+        </div>
+        <div class="right">
+            <div class="rightside">
+                <form [formGroup]="editProductForm">
+                    <div class="pName">
+                        <label>Product Name</label>
+                        <input type="text" class="form-control" formControlName="productName">
+                    </div>
+                    <div class="pImg">
+                        <label>Product Image</label>
+                        <input type="text" class="form-control" formControlName="productImage" #imageValue>
+                    </div>
+                    <div class="pType">
+                        <label>Product Type</label>
+                        <input type="text" class="form-control" formControlName="productType">
+                    </div>
+                    <div class="pPrice">
+                        <label>Product Price</label>
+                        <input type="text" class="form-control" formControlName="productPrice">
+                    </div>
+                    <div class="pBotanicalName">
+                        <label>Product Botanical Name</label>
+                        <input type="text" class="form-control" formControlName="productBotanicalName">
+                    </div>
+                    <div class="pDes">
+                        <label>Product Description</label>
+                        <textarea name="" cols="40" rows="4" class="form-control"
+                            formControlName="productDescription"></textarea>
+                    </div>
+                </form>
+                <div class="buttons">
+                    <div class="ok"><button class="btn btn-success" type="submit" (click)="onSubmit()"
+                            [disabled]="editProductForm.invalid">Submit</button>
+                    </div>
+                    <div class="cancle"><button class="btn btn-danger" (click)="cancle()">Cancle</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

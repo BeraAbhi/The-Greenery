@@ -1,0 +1,159 @@
+.main-product-detail{
+    background: #fff;
+    /* border: 1px solid black; */
+    /* height: 100%; */
+} 
+
+.abhi{
+  display: flex;
+  justify-content: space-between;
+}
+.multiple-img-panel{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-right: 20px;
+}
+.img-list{
+  cursor: pointer;
+  height: 100px;
+  width: 140px !important;
+  border: 2px solid black;
+  padding: 5px !important;
+}
+
+.card-img-top{
+    border-radius: 50px;
+    /* border: 7px solid #D7A1F9; */
+    border: 7px solid black;
+    padding: 5px;
+    /* min-height: 700px;
+    min-width: 600px; */
+}
+
+.price {
+    margin: 1.5em 0;
+    color: #088178;
+    font-size: 1.2em;
+    font-weight: 700;
+    /* font-family: 'Secular One', sans-serif; */
+    font-family: 'Skranji', cursive;
+  }
+  .price span {
+    font-family: 'Secular One', sans-serif;
+    padding-left: 0.15em;
+    font-size: 2.9em;
+  }
+
+   h1 {
+    padding-top: 7px;
+    font-weight: 700;
+    /* color: #088178; */
+  }
+
+  .buy--btn{
+    padding: 1.5em 3.1em;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: #fff;
+    background-color: #ff3f40;
+    box-shadow: 2px 2px 25px -7px #4c4c4c;
+    cursor: pointer;
+  }
+  .buy--btn:active {
+    transform: scale(0.97);
+  }
+  
+  .lead{
+    /* font-family: fangsong; */
+    font-family: 'Bruno Ace SC', cursive;
+  }
+
+  .guarantees-main {
+    display: flex;
+    margin: 2rem 0 2rem;
+    justify-content: space-between; 
+  }
+
+  .guarantees-main .guarantees-inner {
+    width: 19%;
+    text-align: center;
+  }
+
+  .bioName{
+    font-family: 'Indie Flower', cursive;
+    font-size: 21px;
+  }
+
+  .product-pagerich-text{
+    text-align: center;
+    border-top: 1px solid #C8C8C8;
+    border-bottom: 1px solid #C8C8C8;
+    padding-bottom: 61px;
+  }
+
+   .title{
+    justify-content: center;
+    margin-top: 46px;
+    font-size: 45px;
+  }
+
+  .product-pagerich-text p {
+    max-width: 692px;
+    margin: 0 auto;
+    /* font-size: 18px; */
+    /* line-height: 22px; */
+    color: #646464;
+    font-weight: 400;
+    /* font-family: 'Roboto', sans-serif; */
+    text-align: justify;
+    font-size: 30px;
+}
+
+
+
+/* abhi */
+.dec.qtybutton {
+  color: #666666;
+  font-size: 16px;
+  left: 0;
+  position: absolute;
+  cursor: pointer;
+}
+.inc.qtybutton {
+  position: absolute;
+  right: 17px;
+  cursor: pointer;
+}
+.product__big__images .portfolio-full-image {
+  border: 1px solid #1d1d1d;
+  padding: 1px;
+}
+.nav.product__small__images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.product__small__images {
+  margin-top: -10px;
+}
+.product__small__images {
+  min-width: 20%;
+  padding-right: 10px;
+}
+.pot-small-img {
+  margin-top: 10px;
+}
+.cart-plus-minus{
+  height: 70px;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+}
