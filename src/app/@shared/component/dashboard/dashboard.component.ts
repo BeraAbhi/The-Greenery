@@ -104,7 +104,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onChangeProductList(val:string,b?:HTMLElement){
-    if(localStorage.getItem("loginData")?.length !== 0 || localStorage.getItem("loginData") !== null){
+    if(localStorage.getItem("loginData")?.length === 0 || localStorage.getItem("loginData") === null){
       alert('please login to buy a product')
     }
     else{
