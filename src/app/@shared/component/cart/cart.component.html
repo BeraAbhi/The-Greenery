@@ -3,7 +3,7 @@
     <!-- Shopping cart table -->
     <div class="card">
       <div class="card-header">
-        <h2>Shopping Cart</h2> <app-loading-spinner *ngIf="loadingSpinner"></app-loading-spinner>
+        <h2>Shopping Cart</h2> <div class="lds-hourglass" *ngIf="loadingSpinner"></div>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -21,7 +21,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of apiDataToDisplay" class="cartdata">
+              <tr *ngFor="let item of apiDataToDisplay;let i=index" class="cartdata">
                 <td class="p-4">
                   <div class="media align-items-center">
                     <img [src]="item.productImage" class="d-block ui-w-40 ui-bordered mr-4" alt="">
@@ -42,7 +42,7 @@
                 <td class="text-right font-weight-semibold align-middle p-4">{{item.productQuantity *
                   item.productPrice}}
                 </td>
-                <td class="text-center align-middle px-0" (click)="onCartDeleteProduct(item.id)"><a
+                <td class="text-center align-middle px-0" (click)="onCartDeleteProduct(item)"><a
                     class="shop-tooltip close float-none text-danger delete" title="" data-original-title="Remove"><img
                       src="https://cdn-icons-png.flaticon.com/512/8848/8848798.png" alt="" height="38px"
                       width="38px"></a></td>

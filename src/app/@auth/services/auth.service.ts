@@ -17,11 +17,11 @@ export class registraionservice {
   constructor(private http: HttpClient) { }
 
   register(data: any) {
-    return this.http.post<register>('http://localhost:3000/registrationdata', data);
+    return this.http.post<register>('https://the-greenery-7244f-default-rtdb.firebaseio.com/registrationdata.json', data);
   }
 
   reciveData() {
-    return this.http.get<register>('http://localhost:3000/registrationdata');
+    return this.http.get<register>('https://the-greenery-7244f-default-rtdb.firebaseio.com/registrationdata.json');
   }
 
 }

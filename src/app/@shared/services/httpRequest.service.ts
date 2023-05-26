@@ -26,35 +26,45 @@ export class httpRequest{
     
     constructor(private http:HttpClient){}
 
+    public removeNullFromData(data:any){
+      let afterRemoveData = data.filter((res:any) => res !== null)
+      return afterRemoveData
+    }
+
       reciveProduct(){
-        return this.http.get<product>("http://localhost:3000/products")
+        return this.http.get<product>("https://the-greenery-7244f-default-rtdb.firebaseio.com/products.json")
       }
       addProduct(data:product){
-        return this.http.post<product>("http://localhost:3000/products",data)
+        return this.http.post<product>("https://the-greenery-7244f-default-rtdb.firebaseio.com/products.json",data)
       }
       deleteProduct(index:number){
-        return this.http.delete<product>("http://localhost:3000/products/"+index)
+        return this.http.delete<product>("https://the-greenery-7244f-default-rtdb.firebaseio.com/products"+index+"/.json")
       }
       reciveProductWithId(index:number){
-        return this.http.get<product>("http://localhost:3000/products/"+index)
+        return this.http.get<product>("https://the-greenery-7244f-default-rtdb.firebaseio.com/products/"+index+"/.json")
       }
       updateProductWithId(index:number,data:product){
-        return this.http.put<product>("http://localhost:3000/products/"+index,data)
+        return this.http.put<product>("https://the-greenery-7244f-default-rtdb.firebaseio.com/products/"+index+"/.json",data)
       }
   
-      pushInCart(data:cart){
-        return this.http.post<cart>("http://localhost:3000/cart",data)
+      //cart
+      addRemovedNulldataInCart(data:any){
+        return this.http.post("https://the-greenery-7244f-default-rtdb.firebaseio.com/cart.json",data)
+      }
+      pushInCart(data:any){
+        return this.http.put<any>("https://the-greenery-7244f-default-rtdb.firebaseio.com/cart.json",data)
       }
       
       getDataFromCart(){
-        return this.http.get<cart>("http://localhost:3000/cart")
+        return this.http.get<cart>("https://the-greenery-7244f-default-rtdb.firebaseio.com/cart.json")
       }
       
       deleteCartProduct(index:number){
-        return this.http.delete<cart>("http://localhost:3000/cart/"+index)
+        return this.http.delete<cart>("https://the-greenery-7244f-default-rtdb.firebaseio.com/cart/"+index+"/.json")
       }
   
       updateCartData(index:any,data:any){
-       return  this.http.put<cart>("http://localhost:3000/cart/"+index,data)
+        debugger
+       return  this.http.put<any>("https://the-greenery-7244f-default-rtdb.firebaseio.com/cart/"+index+"/.json",data)
       }
 }

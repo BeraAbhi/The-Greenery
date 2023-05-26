@@ -67,30 +67,39 @@ export class DashboardComponent implements OnInit {
 
     this.cartArr =
     {
+      "id":Number,
       "productName": productId.productName,
       "productImage": productId.productImage,
       "productPrice": productId.productPrice,
       "productQuantity": 1,
       "userName": this.localstorageLoginData.firstName
     }
+  
 
     this.httpRequest.getDataFromCart().subscribe((data: any) => {
+      debugger
       this.cartApiData = data
+
       let userSpecificCartItem=data.filter((data:any)=> data.userName === this.localstorageLoginData.firstName)
+
       if (data.length !== 0) {
         let index = this.cartApiData.findIndex((matchItem: any) => matchItem.productName === this.cartArr.productName && matchItem.userName === this.cartArr.userName)
         if (index !== -1) {
           this.cartArr['productQuantity'] = this.cartApiData[index].productQuantity + 1;
-          this.httpRequest.updateCartData(index + 1, this.cartArr).subscribe()
+          this.httpRequest.updateCartData(index, this.cartArr).subscribe()
         }
         else {
+          this.cartArr['id'] = data.length+1
+          data.push(this.cartArr)
           this.httpRequest.cartCount.next(userSpecificCartItem.length + 1)
-          this.httpRequest.pushInCart(this.cartArr).subscribe();
+          this.httpRequest.pushInCart(data).subscribe();
         }
       }
       else {
+        this.cartArr['id'] = data.length+1
+        data.push(this.cartArr)
         this.httpRequest.cartCount.next(userSpecificCartItem.length + 1)
-        this.httpRequest.pushInCart(this.cartArr).subscribe();
+        this.httpRequest.pushInCart(data).subscribe();
       }
     })
   }

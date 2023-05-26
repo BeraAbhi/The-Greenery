@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitData() {
-    let userData = this.apiData.find(
+    let userData = this.apiData?.find(
       (matchData: any) =>
         matchData.email === this.loginData.get('email')?.value &&
         matchData.password === this.loginData.get('password')?.value

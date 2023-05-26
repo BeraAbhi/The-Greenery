@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { findIndex } from 'rxjs';
+import { findIndex, from, of, toArray } from 'rxjs';
 import { registraionservice } from 'src/app/@auth/services/auth.service';
 import { httpRequest } from '../../services/httpRequest.service';
 
@@ -33,8 +33,10 @@ export class CartComponent implements OnInit {
     this.localUserType = JSON.parse(localStorage.getItem('loginData') || '')
     this.httpRequest.getDataFromCart().subscribe((data: any) => {
       this.apiData = data
-      let userCart = data.filter((data: any) => data.userName === this.localUserType.firstName)
+      let withOutNullData = this.httpRequest.removeNullFromData(data)
+      let userCart = withOutNullData.filter((data: any) => data.userName === this.localUserType.firstName)
       this.apiDataToDisplay = userCart
+      this.apiDataToDisplay = this.httpRequest.removeNullFromData(this.apiDataToDisplay)
       this.loadingSpinner=false
       this.onTotalPrice();
       this.onTotalQuantity();
@@ -59,11 +61,12 @@ export class CartComponent implements OnInit {
     this.apiData[index].productQuantity = this.apiData[index].productQuantity + 1;
     this.loadingSpinner=true
     setTimeout(() => {
-    this.httpRequest.updateCartData(this.apiData[index].id, this.apiData[index]).subscribe()
+    this.httpRequest.updateCartData(index, this.apiData[index]).subscribe()
       }, 200);
       setTimeout(() => {
       this.getCartData();
-      }, 500);
+      }, 1000);
+      
       this.cdf.detectChanges();
   }
 
@@ -77,19 +80,20 @@ export class CartComponent implements OnInit {
       this.apiData[index].productQuantity = this.apiData[index].productQuantity - 1;
     }
     setTimeout(() => {
-      this.httpRequest.updateCartData(this.apiData[index].id, this.apiData[index]).subscribe()
+      this.httpRequest.updateCartData(index, this.apiData[index]).subscribe()
       }, 200);
       setTimeout(() => {
       this.getCartData();
-      }, 500);
+      }, 1000);
       // this.cdf.detectChanges();
   }
   onPlaceOrder() {
       localStorage.setItem("order-item",JSON.stringify(this.apiDataToDisplay))
   } 
 
-  onCartDeleteProduct(index: any) {
+  onCartDeleteProduct(item: any) {
     debugger
+    let index = this.apiData.findIndex((res:any) => res===item ) ;
     this.httpRequest.deleteCartProduct(index).subscribe((res:any) =>{
       this.loadingSpinner=true
     }
