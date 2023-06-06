@@ -14,6 +14,7 @@ export class ProductDetailComponent implements OnInit {
   cartArr:any;
   productQuantity=1;
   productImage:any
+  loadingSpinner:boolean =true;
 
   constructor(private route: ActivatedRoute,
     private  httpRequest:httpRequest,
@@ -24,6 +25,7 @@ export class ProductDetailComponent implements OnInit {
     let id = this.route.snapshot.params['id']
     debugger
     this.httpRequest.reciveProductWithId(id).subscribe(res => {
+      this.loadingSpinner=false
       this.productDetail=res
       this.productImage=res.productImage
 
@@ -34,8 +36,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   AddToCart(val:any){
+    debugger
     this.cartArr =  
     {
+      "id":Number,
       "productName": this.productDetail?.productName,
       "productImage": this.productDetail?.productImage,
       "productPrice": this.productDetail?.productPrice,
@@ -47,11 +51,13 @@ export class ProductDetailComponent implements OnInit {
       let cartdata = res
       let index = res.findIndex((data:any)=> data.productName === this.productDetail?.productName && this.productDetail?.productName && data.userName === this.localstorageLoginData.firstName)
       if(index === -1){
-        this.httpRequest.pushInCart(this.cartArr).subscribe();
+        this.cartArr['id'] = res.length+1
+        res.push(this.cartArr)
+        this.httpRequest.pushInCart(res).subscribe();
       }
       else{
         this.cartArr.productQuantity = Number(res[index].productQuantity) + Number(this.productQuantity)
-        this.httpRequest.updateCartData(res[index].id,this.cartArr).subscribe();
+        this.httpRequest.updateCartData(index,this.cartArr).subscribe();
         this.router.navigate(['/cart'])
       }
     })

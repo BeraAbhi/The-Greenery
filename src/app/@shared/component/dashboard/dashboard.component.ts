@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   localstorageLoginData: any ;
   noData:number = 0;
   ABC=''
+  loadindSpinner:boolean=true
 
   constructor(private router: Router, private registraionservice: registraionservice,
     private httpRequest: httpRequest,private render:Renderer2) { }
@@ -31,6 +32,7 @@ export class DashboardComponent implements OnInit {
     })
     if(localStorage.length>=1){
     this.httpRequest.reciveProduct().subscribe((data: any) => {
+      this.loadindSpinner=false
       debugger
       data.productImage
       this.productApiData = data; 
@@ -64,7 +66,6 @@ export class DashboardComponent implements OnInit {
   }
 
   onCart(productId: any) {
-
     this.cartArr =
     {
       "id":Number,
@@ -79,7 +80,6 @@ export class DashboardComponent implements OnInit {
     this.httpRequest.getDataFromCart().subscribe((data: any) => {
       debugger
       this.cartApiData = data
-
       let userSpecificCartItem=data.filter((data:any)=> data.userName === this.localstorageLoginData.firstName)
 
       if (data.length !== 0) {

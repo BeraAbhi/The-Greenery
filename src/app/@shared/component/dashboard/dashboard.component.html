@@ -1,5 +1,5 @@
-<app-header></app-header>
-
+<!-- <app-header></app-header> -->
+<app-loading-spinner *ngIf="loadindSpinner"></app-loading-spinner>
 <!-- <section id="hero"> 
   <h4>Trade-in-offer</h4>
   <h2>Supper value deals</h2>
@@ -226,279 +226,173 @@
   </div>
 </section> -->
 
-<section class="htc__product__area ptb--130 bg__white">
-  <div class="container">
-    <div class="htc__product__container">
-      <!-- Start Product MEnu -->
-      <div class="row">
-        <div class="col-md-12">
-          <div class="product__menu" style="cursor: pointer;">
-            <button #b0 (click)="onChangeProductList('',b0)">
-              all
-            </button>
-            <button class=" a" #b1 (click)="onChangeProductList('plant', b1)">
-              plants
-            </button>
-            <button #b2 (click)="onChangeProductList('Pots', b2)">pots</button>
-            <button #b3 (click)="onChangeProductList('tools', b3)">
-              tools
-            </button>
-            <button #b4 (click)="onChangeProductList('seeds', b4)">
-              seeds
-            </button>
-            <button #b5 (click)="onChangeProductList('flowers', b5)">
-              flowers
-            </button>
+<ng-container *ngIf="!loadindSpinner">
+  <app-header></app-header>
+  <section class="htc__product__area ptb--130 bg__white">
+    <div class="container">
+      <div class="htc__product__container">
+        <!-- Start Product MEnu -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="product__menu" style="cursor: pointer;">
+              <button #b0 (click)="onChangeProductList('',b0)">
+                all
+              </button>
+              <button class=" a" #b1 (click)="onChangeProductList('plant', b1)">
+                plants
+              </button>
+              <button #b2 (click)="onChangeProductList('Pots', b2)">pots</button>
+              <button #b3 (click)="onChangeProductList('tools', b3)">
+                tools
+              </button>
+              <button #b4 (click)="onChangeProductList('seeds', b4)">
+                seeds
+              </button>
+              <button #b5 (click)="onChangeProductList('flowers', b5)">
+                flowers
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row product__list">
-        <!-- Start Single Product -->
-        <div class="col-md-3 single__pro col-lg-3 col-md-4 cat--1 col-sm-12" *ngFor="let product of productApiData;let i=index">
-          <div class="product foo" *ngIf="i<8">
-            <div class="product__inner">
-              <div class="pro__thumb">
-                <a>
-                  <img routerLink="/product-detail/{{ product.id }}" style="cursor: pointer; height: 330px !important; border-radius: 12px;"
-                    [src]="product.productImage"
-                    alt="product images" />
-                </a>
+        <div class="row product__list">
+          <!-- Start Single Product -->
+          <div class="col-md-3 single__pro col-lg-3 col-md-4 cat--1 col-sm-12" *ngFor="let product of productApiData;let i=index">
+            <div class="product foo" *ngIf="i<8">
+              <div class="product__inner">
+                <div class="pro__thumb">
+                  <a>
+                    <img routerLink="/product-detail/{{ i }}" style="cursor: pointer; height: 330px !important; border-radius: 12px;"
+                      [src]="product.productImage"
+                      alt="product images" />
+                  </a>
+                </div>
+                <div class="product__hover__info">
+                  <ul class="product__action">
+                    <li>
+                      <a data-toggle="modal" data-target="#productModal" title="Quick View"
+                        class="quick-view modal-view detail-link" style="cursor: pointer;" routerLink="/product-detail/{{ i }}"><span class="ti-plus"></span></a>
+                        <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onProductEdit(product)" title="edit-product" style="cursor: pointer;"><span class="ti-pencil"></span></a>
+                    </li>
+                    <li>
+                      <a title="Add TO Cart" style="cursor: pointer;" (click)="onCart(product)"><span class="ti-shopping-cart"></span></a>
+                      <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onDeleteProduct(product)" title="delete-product" style="cursor: pointer;"><span class="ti-na"></span></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="add__to__wishlist">
+                  <!-- <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" ><span
+                      class="ti-heart"></span></a> -->
+                      
+                </div>
               </div>
-              <div class="product__hover__info">
-                <ul class="product__action">
-                  <li>
-                    <a data-toggle="modal" data-target="#productModal" title="Quick View"
-                      class="quick-view modal-view detail-link" style="cursor: pointer;" routerLink="/product-detail/{{ product.id }}"><span class="ti-plus"></span></a>
-                      <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onProductEdit(product)" title="edit-product" style="cursor: pointer;"><span class="ti-pencil"></span></a>
-                  </li>
-                  <li>
-                    <a title="Add TO Cart" style="cursor: pointer;" (click)="onCart(product)"><span class="ti-shopping-cart"></span></a>
-                    <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onDeleteProduct(product)" title="delete-product" style="cursor: pointer;"><span class="ti-na"></span></a>
-                  </li>
+              <div class="product__details">
+                <h2 class="product-name">
+                  <a >{{ product.productName }}</a>
+                </h2>
+                <ul class="product__price">
+                  <!-- <li class="old__price">$16.00</li> -->
+                  <li class="new__price">₹{{ product.productPrice }}</li>
                 </ul>
               </div>
-              <div class="add__to__wishlist">
-                <!-- <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" ><span
-                    class="ti-heart"></span></a> -->
-                    
-              </div>
-            </div>
-            <div class="product__details">
-              <h2 class="product-name">
-                <a >{{ product.productName }}</a>
-              </h2>
-              <ul class="product__price">
-                <!-- <li class="old__price">$16.00</li> -->
-                <li class="new__price">₹{{ product.productPrice }}</li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="feature" class="section-p1">
-  <div class="fe-box">
-    <h6>Free Shipping</h6>
-  </div>
-  <div class="fe-box">
-    <!-- <img src="cf357a5c932ab2142e623.png?compress=1&resize=400x300&vertical=top" alt=""> -->
-    <h6>Online Order</h6>
-  </div>
-  <div class="fe-box">
-    <!-- <img src="img/features/f3.png" alt=""> -->
-    <h6>Save Money</h6>
-  </div>
-  <div class="fe-box">
-    <!-- <img src="img/features/f4.png" alt=""> -->
-    <h6>Promotions</h6>
-  </div>
-  <div class="fe-box">
-    <!-- <img src="img/features/f5.png" alt=""> -->
-    <h6>Happy Sell</h6>
-  </div>
-  <div class="fe-box">
-    <!-- <img src="img/features/f6.png" alt=""> -->
-    <h6>f24/7</h6>
-  </div>
-</section>
-
-<section class="htc__product__area ptb--13 bg__white">
-  <div class="container">
-    <div class="htc__product__container">
-<div class="row product__list">
-  <!-- Start Single Product -->
-  <div class="col-md-3 single__pro col-lg-3 col-md-4 cat--1 col-sm-12" *ngFor="let product of productApiData;let i=index">
-    <div class="product foo" *ngIf="i>=8 && i<16">
-      <div class="product__inner">
-        <div class="pro__thumb">
-          <a>
-            <img routerLink="/product-detail/{{ product.id }}" style="cursor: pointer; height: 330px !important; border-radius: 12px;"
-            [src]="product.productImage"
-            alt="product images" />
-          </a>
+  </section>
+  
+  <section id="feature" class="section-p1">
+    <div class="fe-box">
+      <h6>Free Shipping</h6>
+    </div>
+    <div class="fe-box">
+      <!-- <img src="cf357a5c932ab2142e623.png?compress=1&resize=400x300&vertical=top" alt=""> -->
+      <h6>Online Order</h6>
+    </div>
+    <div class="fe-box">
+      <!-- <img src="img/features/f3.png" alt=""> -->
+      <h6>Save Money</h6>
+    </div>
+    <div class="fe-box">
+      <!-- <img src="img/features/f4.png" alt=""> -->
+      <h6>Promotions</h6>
+    </div>
+    <div class="fe-box">
+      <!-- <img src="img/features/f5.png" alt=""> -->
+      <h6>Happy Sell</h6>
+    </div>
+    <div class="fe-box">
+      <!-- <img src="img/features/f6.png" alt=""> -->
+      <h6>f24/7</h6>
+    </div>
+  </section>
+  
+  <section class="htc__product__area ptb--13 bg__white">
+    <div class="container">
+      <div class="htc__product__container">
+  <div class="row product__list">
+    <!-- Start Single Product -->
+    <div class="col-md-3 single__pro col-lg-3 col-md-4 cat--1 col-sm-12" *ngFor="let product of productApiData;let i=index">
+      <div class="product foo" *ngIf="i>=8 && i<16">
+        <div class="product__inner">
+          <div class="pro__thumb">
+            <a>
+              <img routerLink="/product-detail/{{ i }}" style="cursor: pointer; height: 330px !important; border-radius: 12px;"
+              [src]="product.productImage"
+              alt="product images" />
+            </a>
+          </div>
+          <div class="product__hover__info">
+            <ul class="product__action">
+              <li>
+                <a data-toggle="modal" data-target="#productModal" title="Quick View"
+                  class="quick-view modal-view detail-link" style="cursor: pointer;" routerLink="/product-detail/{{ i }}"><span class="ti-plus"></span></a>
+                  <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onProductEdit(product)" title="edit-product" style="cursor: pointer;"><span class="ti-pencil"></span></a>
+              </li>
+              <li>
+                <a title="Add TO Cart" style="cursor: pointer;" (click)="onCart(product)"><span class="ti-shopping-cart"></span></a>
+                <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onDeleteProduct(product)" title="delete-product" style="cursor: pointer;"><span class="ti-na"></span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="add__to__wishlist">
+            <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" ><span
+                class="ti-heart"></span></a>
+          </div>
         </div>
-        <div class="product__hover__info">
-          <ul class="product__action">
-            <li>
-              <a data-toggle="modal" data-target="#productModal" title="Quick View"
-                class="quick-view modal-view detail-link" style="cursor: pointer;" routerLink="/product-detail/{{ product.id }}"><span class="ti-plus"></span></a>
-                <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onProductEdit(product)" title="edit-product" style="cursor: pointer;"><span class="ti-pencil"></span></a>
-            </li>
-            <li>
-              <a title="Add TO Cart" style="cursor: pointer;" (click)="onCart(product)"><span class="ti-shopping-cart"></span></a>
-              <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onDeleteProduct(product)" title="delete-product" style="cursor: pointer;"><span class="ti-na"></span></a>
-            </li>
+        <div class="product__details">
+          <h2 class="product-name">
+            <a >{{ product.productName }}</a>
+          </h2>
+          <ul class="product__price">
+            <!-- <li class="old__price">$16.00</li> -->
+            <li class="new__price">₹{{ product.productPrice }}</li>
           </ul>
         </div>
-        <div class="add__to__wishlist">
-          <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" ><span
-              class="ti-heart"></span></a>
-        </div>
-      </div>
-      <div class="product__details">
-        <h2 class="product-name">
-          <a >{{ product.productName }}</a>
-        </h2>
-        <ul class="product__price">
-          <!-- <li class="old__price">$16.00</li> -->
-          <li class="new__price">₹{{ product.productPrice }}</li>
-        </ul>
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
-</section>
-
-<section
-  class="leave-and-collection elementor-section elementor-top-section elementor-element elementor-element-1d2289e elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-  data-id="1d2289e" data-element_type="section">
-  <div class="elementor-container elementor-column-gap-default">
-    <div class="elementor-row">
-      <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a809201"
-        data-id="a809201" data-element_type="column">
-        <div class="elementor-column-wrap elementor-element-populated">
-          <div class="elementor-widget-wrap">
-            <div class="elementor-element elementor-element-e71f37e elementor-widget elementor-widget-image"
-              data-id="e71f37e" data-element_type="widget" data-widget_type="image.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-image">
-
-                  <img decoding="async" width="209" height="90"
-                    src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2021/03/basil-leaf.png"
-                    class="attachment-full size-full wp-image-4204" alt="" loading="lazy">                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-</section>
-
-<div class="collections">
+  </div>
+  </section>
+  
   <section
-  class=" elementor-section elementor-top-section elementor-element elementor-element-5370a06 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-  data-id="5370a06" data-element_type="section">
-  <div class="elementor-container elementor-column-gap-no">
-    <div class="elementor-row">
-      <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-9e2351a"
-        data-id="9e2351a" data-element_type="column"
-        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-        <div class="elementor-column-wrap elementor-element-populated">
-          <div class="elementor-widget-wrap">
-            <div
-              class="elementor-element elementor-element-deb0422 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-              data-id="deb0422" data-element_type="widget" data-widget_type="image-box.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-image-box-wrapper">
-                  <div class="elementor-image-box-content">
-                    <h4 class="elementor-image-box-title">Beautiful Plant Varieties</h4>
-                    <p class="elementor-image-box-description">A symphony of colors and forms, beautiful plant varieties paint the world with nature's brushstrokes.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-da7ff13 elementor-widget elementor-widget-button"
-              data-id="da7ff13" data-element_type="widget" data-widget_type="button.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-button-wrapper">
-                  <a  class="elementor-button-link elementor-button elementor-size-sm" role="button">
-                    <span class="elementor-button-content-wrapper">
-                      <span class="elementor-button-text">See Collection</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-0b6e081"
-        data-id="0b6e081" data-element_type="column"
-        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-        <div class="elementor-column-wrap elementor-element-populated">
-          <div class="elementor-widget-wrap">
-            <div
-              class="elementor-element elementor-element-5d64031 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-              data-id="5d64031" data-element_type="widget" data-widget_type="image-box.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-image-box-wrapper">
-                  <div class="elementor-image-box-content">
-                    <h4 class="elementor-image-box-title">Trendy Pots Varieties</h4>
-                    <p class="elementor-image-box-description">At The Greenery, indulge in a curated collection of trendy pots varieties.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-2363cee elementor-widget elementor-widget-button"
-              data-id="2363cee" data-element_type="widget" data-widget_type="button.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-button-wrapper">
-                  <a  class="elementor-button-link elementor-button elementor-size-sm" role="button">
-                    <span class="elementor-button-content-wrapper">
-                      <span class="elementor-button-text">See Collection</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-eca0892"
-        data-id="eca0892" data-element_type="column"
-        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-        <div class="elementor-column-wrap elementor-element-populated">
-          <div class="elementor-widget-wrap">
-            <div
-              class="elementor-element elementor-element-6217a15 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
-              data-id="6217a15" data-element_type="widget" data-widget_type="image-box.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-image-box-wrapper">
-                  <div class="elementor-image-box-content">
-                    <h4 class="elementor-image-box-title">Gardening Accessories</h4>
-                    <p class="elementor-image-box-description">Explore an abundant array of top-quality gardening tools at our shop
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-f63aaef elementor-widget elementor-widget-button"
-              data-id="f63aaef" data-element_type="widget" data-widget_type="button.default">
-              <div class="elementor-widget-container">
-                <div class="elementor-button-wrapper">
-                  <a  class="elementor-button-link elementor-button elementor-size-sm" role="button">
-                    <span class="elementor-button-content-wrapper">
-                      <span class="elementor-button-text">Visit the store</span>
-                    </span>
-                  </a>
+    class="leave-and-collection elementor-section elementor-top-section elementor-element elementor-element-1d2289e elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+    data-id="1d2289e" data-element_type="section">
+    <div class="elementor-container elementor-column-gap-default">
+      <div class="elementor-row">
+        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a809201"
+          data-id="a809201" data-element_type="column">
+          <div class="elementor-column-wrap elementor-element-populated">
+            <div class="elementor-widget-wrap">
+              <div class="elementor-element elementor-element-e71f37e elementor-widget elementor-widget-image"
+                data-id="e71f37e" data-element_type="widget" data-widget_type="image.default">
+                <div class="elementor-widget-container">
+                  <div class="elementor-image">
+  
+                    <img decoding="async" width="209" height="90"
+                      src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2021/03/basil-leaf.png"
+                      class="attachment-full size-full wp-image-4204" alt="" loading="lazy">                </div>
                 </div>
               </div>
             </div>
@@ -506,59 +400,168 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-</div>
-
-
-
-
-
-<section class="htc__product__area ptb--13 bg__white">
-  <div class="container">
-    <div class="htc__product__container">
-<div class="row product__list">
-  <!-- Start Single Product -->
-  <div class="col-md-3 single__pro col-lg-3 col-md-4 cat--1 col-sm-12" *ngFor="let product of productApiData;let i=index">
-    <div class="product foo" *ngIf="i>=16 && i<32">
-      <div class="product__inner">
-        <div class="pro__thumb">
-          <a>
-            <img routerLink="/product-detail/{{ product.id }}" style="cursor: pointer; height: 330px !important; border-radius: 12px;"
-            [src]="product.productImage"
-            alt="product images" />
-          </a>
+  </section>
+  
+  <div class="collections">
+    <section
+    class=" elementor-section elementor-top-section elementor-element elementor-element-5370a06 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+    data-id="5370a06" data-element_type="section">
+    <div class="elementor-container elementor-column-gap-no">
+      <div class="elementor-row">
+        <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-9e2351a"
+          data-id="9e2351a" data-element_type="column"
+          data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+          <div class="elementor-column-wrap elementor-element-populated">
+            <div class="elementor-widget-wrap">
+              <div
+                class="elementor-element elementor-element-deb0422 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                data-id="deb0422" data-element_type="widget" data-widget_type="image-box.default">
+                <div class="elementor-widget-container">
+                  <div class="elementor-image-box-wrapper">
+                    <div class="elementor-image-box-content">
+                      <h4 class="elementor-image-box-title">Beautiful Plant Varieties</h4>
+                      <p class="elementor-image-box-description">A symphony of colors and forms, beautiful plant varieties paint the world with nature's brushstrokes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="elementor-element elementor-element-da7ff13 elementor-widget elementor-widget-button"
+                data-id="da7ff13" data-element_type="widget" data-widget_type="button.default">
+                <div class="elementor-widget-container">
+                  <div class="elementor-button-wrapper">
+                    <a  class="elementor-button-link elementor-button elementor-size-sm" role="button">
+                      <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-text">See Collection</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="product__hover__info">
-          <ul class="product__action">
-            <li>
-              <a data-toggle="modal" data-target="#productModal" title="Quick View"
-                class="quick-view modal-view detail-link" style="cursor: pointer;" routerLink="/product-detail/{{ product.id }}"><span class="ti-plus"></span></a>
-                <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onProductEdit(product)" title="Edit-product" style="cursor: pointer;"><span class="ti-pencil"></span></a>
-            </li>
-            <li>
-              <a title="Add TO Cart" style="cursor: pointer;" (click)="onCart(product)"><span class="ti-shopping-cart"></span></a>
-              <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onDeleteProduct(product)" title="delete-product" style="cursor: pointer;"><span class="ti-na"></span></a>
-            </li>
+        <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-0b6e081"
+          data-id="0b6e081" data-element_type="column"
+          data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+          <div class="elementor-column-wrap elementor-element-populated">
+            <div class="elementor-widget-wrap">
+              <div
+                class="elementor-element elementor-element-5d64031 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                data-id="5d64031" data-element_type="widget" data-widget_type="image-box.default">
+                <div class="elementor-widget-container">
+                  <div class="elementor-image-box-wrapper">
+                    <div class="elementor-image-box-content">
+                      <h4 class="elementor-image-box-title">Trendy Pots Varieties</h4>
+                      <p class="elementor-image-box-description">At The Greenery, indulge in a curated collection of trendy pots varieties.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="elementor-element elementor-element-2363cee elementor-widget elementor-widget-button"
+                data-id="2363cee" data-element_type="widget" data-widget_type="button.default">
+                <div class="elementor-widget-container">
+                  <div class="elementor-button-wrapper">
+                    <a  class="elementor-button-link elementor-button elementor-size-sm" role="button">
+                      <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-text">See Collection</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-eca0892"
+          data-id="eca0892" data-element_type="column"
+          data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+          <div class="elementor-column-wrap elementor-element-populated">
+            <div class="elementor-widget-wrap">
+              <div
+                class="elementor-element elementor-element-6217a15 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                data-id="6217a15" data-element_type="widget" data-widget_type="image-box.default">
+                <div class="elementor-widget-container">
+                  <div class="elementor-image-box-wrapper">
+                    <div class="elementor-image-box-content">
+                      <h4 class="elementor-image-box-title">Gardening Accessories</h4>
+                      <p class="elementor-image-box-description">Explore an abundant array of top-quality gardening tools at our shop
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="elementor-element elementor-element-f63aaef elementor-widget elementor-widget-button"
+                data-id="f63aaef" data-element_type="widget" data-widget_type="button.default">
+                <div class="elementor-widget-container">
+                  <div class="elementor-button-wrapper">
+                    <a  class="elementor-button-link elementor-button elementor-size-sm" role="button">
+                      <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-text">Visit the store</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  
+  
+  
+  
+  
+  <section class="htc__product__area ptb--13 bg__white">
+    <div class="container">
+      <div class="htc__product__container">
+  <div class="row product__list">
+    <!-- Start Single Product -->
+    <div class="col-md-3 single__pro col-lg-3 col-md-4 cat--1 col-sm-12" *ngFor="let product of productApiData;let i=index">
+      <div class="product foo" *ngIf="i>=16 && i<32">
+        <div class="product__inner">
+          <div class="pro__thumb">
+            <a>
+              <img routerLink="/product-detail/{{ i }}" style="cursor: pointer; height: 330px !important; border-radius: 12px;"
+              [src]="product.productImage"
+              alt="product images" />
+            </a>
+          </div>
+          <div class="product__hover__info">
+            <ul class="product__action">
+              <li>
+                <a data-toggle="modal" data-target="#productModal" title="Quick View"
+                  class="quick-view modal-view detail-link" style="cursor: pointer;" routerLink="/product-detail/{{ i }}"><span class="ti-plus"></span></a>
+                  <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onProductEdit(product)" title="Edit-product" style="cursor: pointer;"><span class="ti-pencil"></span></a>
+              </li>
+              <li>
+                <a title="Add TO Cart" style="cursor: pointer;" (click)="onCart(product)"><span class="ti-shopping-cart"></span></a>
+                <a *ngIf="localstorageLoginData.userType === 'Admin'" (click)="onDeleteProduct(product)" title="delete-product" style="cursor: pointer;"><span class="ti-na"></span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="add__to__wishlist">
+            <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" ><span
+                class="ti-heart"></span></a>
+          </div>
+        </div>
+        <div class="product__details">
+          <h2 class="product-name">
+            <a >{{ product.productName }}</a>
+          </h2>
+          <ul class="product__price">
+            <!-- <li class="old__price">$16.00</li> -->
+            <li class="new__price">₹{{ product.productPrice }}</li>
           </ul>
         </div>
-        <div class="add__to__wishlist">
-          <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" ><span
-              class="ti-heart"></span></a>
-        </div>
-      </div>
-      <div class="product__details">
-        <h2 class="product-name">
-          <a >{{ product.productName }}</a>
-        </h2>
-        <ul class="product__price">
-          <!-- <li class="old__price">$16.00</li> -->
-          <li class="new__price">₹{{ product.productPrice }}</li>
-        </ul>
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
-</section>
+  </div>
+  </div>
+  </section>
+</ng-container>
