@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
   apiDataToDisplay: any;
   localUserType: any;
   loadingSpinner!:boolean;
+  mainLoadingSpinner=true;
 
   constructor(private http: HttpClient,
     private httpRequest: httpRequest,
@@ -32,6 +33,7 @@ export class CartComponent implements OnInit {
     debugger
     this.localUserType = JSON.parse(localStorage.getItem('loginData') || '')
     this.httpRequest.getDataFromCart().subscribe((data: any) => {
+      this.mainLoadingSpinner=false
       this.apiData = data
       let withOutNullData = this.httpRequest.removeNullFromData(data)
       let userCart = withOutNullData.filter((data: any) => data.userName === this.localUserType.firstName)
