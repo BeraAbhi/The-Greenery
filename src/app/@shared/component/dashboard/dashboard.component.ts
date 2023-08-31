@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
     debugger
     if(localStorage.getItem("loginData")?.length === 0 || localStorage.getItem("loginData") === null){
       alert('please login to buy a product')
+      this.router.navigate(['./login'])
     }
     this.noData = localStorage.length
     this.httpRequest.searchText.subscribe(res=>{

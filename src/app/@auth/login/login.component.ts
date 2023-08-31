@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { registraionservice } from '../services/auth.service';
+import { from, of, toArray } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,12 @@ export class LoginComponent implements OnInit {
       password: new FormControl(null, Validators.required),
     });
     this.registrationService1.reciveData().subscribe((data: any) => {
-      this.apiData = data;
+      var arr:any = [];
+      Object.keys(data).forEach(function(key)
+      {
+          arr.push(data[key]);
+      });
+          this.apiData = arr;
     });
   }
 
