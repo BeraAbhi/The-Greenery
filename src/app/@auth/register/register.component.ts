@@ -33,7 +33,12 @@ export class RegisterComponent implements OnInit {
     }
     )
     this.registrationService1.reciveData().subscribe((data: any) => {
-      this.apiData = data
+      var arr:any = [];
+      Object.keys(data).forEach(function(key)
+      {
+          arr.push(data[key]);
+      });
+      this.apiData = arr
     })
   }
   private ConfirmPasswordValidator(controlName:any, matchingControlName:any) {

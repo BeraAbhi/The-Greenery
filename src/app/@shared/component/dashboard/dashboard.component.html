@@ -1,5 +1,10 @@
 <!-- <app-header></app-header> -->
-<app-loading-spinner *ngIf="loadindSpinner"></app-loading-spinner>
+
+<ng-container *ngIf="loadindSpinner">
+  <app-loading-spinner>
+  </app-loading-spinner>
+</ng-container>
+
 <!-- <section id="hero"> 
   <h4>Trade-in-offer</h4>
   <h2>Supper value deals</h2>
